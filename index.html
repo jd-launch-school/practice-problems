@@ -5,37 +5,36 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>JS225 Practice Problems</title>
-	<link rel="stylesheet" href="./atom-one-dark.min.css">
-	<link rel="stylesheet" href="style.css">
-	<script src="./script.js">
-
-	</script>
-	<script src="./highlight.min.js">
-
-	</script>
-	<script src="./marked.min.js">
-
-	</script>
+  <link rel="stylesheet" href="./resources/css/atom-one-dark.min.css">
+	<link rel="stylesheet" href="./resources/css/style.css">
+	<script src="./resources/js/main.js"></script>
+  <script src="./resources/js/highlight.min.js"></script>
+  <script src="./resources/js/highlightjs-line-numbers.js"></script>
+  <script src="./resources/js/ruby.min.js"></script>
+	<script src="./resources/js/marked.min.js"></script>
 </head>
 
 <body>
 	<main>
-		<input type="file" id="first" class="file-picker"></input>
+    <header>
+      <p id="file-picker">
+        <input type="file" id="first"></input>
+      </p>
 
-    <label>Question #:
-      <input type="number" id="get-question" min="1" max="200"></input>
-    </label>
+      <nav>
+        <button id="previous" class='previous'>&lt;</button>
 
-    --
-    <button class="next">Next Random Question</button>
-    --
-    <button id="reset">Reset</button>
+        <input type="number" id="get-question" min="1" max="200"></input>
 
-    <hr>
-    <div id="question"></div>
-    
-    <hr>
-    <!-- <button class="next">Next Random Question</button> -->
+        <button id="next" class='next'>&gt;</button>
+
+        <button class="random">Random Question</button>
+        <button id="reset" class="reset">Reset</button>
+      </nav>
+    </header>
+
+    <div id="question" class="question"></div>
+    <button id="theme" class="theme">🌝</button>
   </main>
 </body>
 </html>

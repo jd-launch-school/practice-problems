@@ -1,0 +1,136 @@
+body {
+  background-color: white;
+  color: black;
+  font-size: 16px;
+  margin: 0;
+}
+
+summary {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+h1 {
+  margin-top: 0;
+}
+
+header {
+  position: sticky;
+  top: 0;
+}
+
+header nav {
+  background-color: rgb(255, 0, 0);
+  display: grid;
+  grid-template-areas: "previous input next" "random random reset";
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 10px;
+  justify-content: center;
+  margin: 0;
+  padding: 10px;
+  max-width: 100%;
+}
+
+main {
+  width: 100%;
+  max-width: 800px;
+  margin: auto;
+}
+
+input[type="number"] {
+  font-size: 20px;
+  grid-area: input;
+  justify-self: center;
+  text-align: center;
+  width: 90%;
+  padding: 5px 5px;
+}
+
+.hidden {
+  position: absolute;
+  top: -9999px;
+}
+
+.reset {
+  grid-area: reset;
+  font-size: 20px;
+  padding: 5px 10px;
+}
+
+.random {
+  grid-area: random;
+  font-size: 20px;
+  padding: 5px 10px;
+}
+
+.previous {
+  font-size: 20px;
+  grid-area: previous;
+}
+
+.next {
+  font-size: 20px;
+  grid-area: next;
+}
+
+.question {
+  padding: 20px;
+}
+
+code {
+  background-color: lightgray;
+  border-radius: 5px;
+  padding: 0 3px;
+  color: black;
+}
+
+.theme {
+  background-color: transparent;
+  border: none;
+  bottom: 25px;
+  font-size: 40px;
+  height: 40px;
+  right: 35px;
+  position: fixed;
+  width: 40px; 
+}
+/* Remove Arrows for Number Input (Firefox) */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+/* Remove Arrows for Number Input (Other) */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* for block of numbers */
+.hljs-ln-numbers {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+
+    text-align: right;
+    color: #5c5c5c;
+    vertical-align: top;
+
+    /* your custom style here */
+}
+
+/* for block of code */
+.hljs-ln-code {
+  padding-left: 10px;
+}
+
+.hljs-ln-line {
+  padding-left: 5px;
+}
+
+.hljs-ln-line .hljs-ln-n {
+  padding-right: 10px;
+}
