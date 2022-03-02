@@ -116,26 +116,29 @@ window.onload = function () {
     const body = document.querySelector('body');
     const button = document.querySelector('#theme');
     const code = document.querySelectorAll('code');
+    const header = document.querySelector('header nav');
     const detectedTheme = body.style.backgroundColor;
-
+    const elements = [anchor, body, button, code, header];
+    
     if (theme === 'dark') {
-      darkMode(anchor, body, button, code);
+      darkMode(...elements);
     } else if (theme === 'light') {
-      lightMode(anchor, body, button, code);
+      lightMode(...elements);
     } else {
       if (detectedTheme === 'black') {
-        lightMode(anchor, body, button, code);
+        lightMode(...elements);
       } else {
-        darkMode(anchor, body, button, code);
+        darkMode(...elements);
       }
     }
   }
 
-  function darkMode(anchor, body, button, code) {
+  function darkMode(anchor, body, button, code, header) {
     anchor.style.color = 'lightblue';
     body.style.backgroundColor = 'black';
     body.style.color = 'white';
-    button.textContent = '🌚';
+    button.textContent = '🌃';
+    header.style.backgroundColor = 'black';
 
     code.forEach(elem => {
       if (!elem.result) {
@@ -144,11 +147,12 @@ window.onload = function () {
     });
   }
 
-  function lightMode(anchor, body, button, code) {
+  function lightMode(anchor, body, button, code, header) {
     anchor.style.color = 'blue';
     body.style.backgroundColor = 'white';
     body.style.color = 'black';
-    button.textContent = '🌝';
+    button.textContent = '🏙️';
+    header.style.backgroundColor = 'white';
 
     code.forEach(elem => {
       if (!elem.result) {

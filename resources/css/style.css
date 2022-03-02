@@ -20,7 +20,7 @@ header {
 }
 
 header nav {
-  /* background-color: rgb(255, 0, 0); */
+  background-color: #ffffff;
   display: grid;
   grid-template-areas: "previous input next" "random random reset";
   grid-template-columns: 1fr 1fr 1fr;
@@ -85,14 +85,15 @@ code {
 }
 
 .theme {
+  /* background-color: #eeeeec; */
   background-color: transparent;
+  /* border-radius: 50%; */
+  /* box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); */
   border: none;
   bottom: 25px;
   font-size: 40px;
-  height: 40px;
   right: 35px;
   position: fixed;
-  width: 40px; 
 }
 /* Remove Arrows for Number Input (Firefox) */
 input[type=number] {
