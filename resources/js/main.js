@@ -138,6 +138,7 @@ window.onload = function () {
     body.style.backgroundColor = 'black';
     body.style.color = 'white';
     button.textContent = '🌃';
+    button.style.backgroundColor = '#222222';
     header.style.backgroundColor = 'black';
 
     code.forEach(elem => {
@@ -152,6 +153,7 @@ window.onload = function () {
     body.style.backgroundColor = 'white';
     body.style.color = 'black';
     button.textContent = '🏙️';
+    button.style.backgroundColor = 'white';
     header.style.backgroundColor = 'white';
 
     code.forEach(elem => {

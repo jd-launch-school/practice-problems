@@ -85,14 +85,14 @@ code {
 }
 
 .theme {
-  /* background-color: #eeeeec; */
-  background-color: transparent;
-  /* border-radius: 50%; */
-  /* box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); */
+  background-color: #eeeeec;
+  /* background-color: transparent; */
+  border-radius: 10%;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
   border: none;
-  bottom: 25px;
+  bottom: 10px;
   font-size: 40px;
-  right: 35px;
+  right: 10px;
   position: fixed;
 }
 /* Remove Arrows for Number Input (Firefox) */
