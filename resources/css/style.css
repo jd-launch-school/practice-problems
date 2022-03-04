@@ -119,8 +119,6 @@ input::-webkit-inner-spin-button {
     text-align: right;
     color: #5c5c5c;
     vertical-align: top;
-
-    /* your custom style here */
 }
 
 /* for block of code */
@@ -134,4 +132,31 @@ input::-webkit-inner-spin-button {
 
 .hljs-ln-line .hljs-ln-n {
   padding-right: 10px;
+}
+
+/* Dark Mode */
+.dark-mode {
+  background-color: black;
+  color: white;
+}
+
+.dark-mode header nav {
+  background-color: black;
+}
+
+.dark-mode a {
+  color: lightblue;
+}
+
+.dark-mode code {
+  background-color: darkgrey;
+}
+
+.dark-mode pre code {
+  background-color: #282c34;
+}
+
+.dark-mode #theme {
+  background-color: #222222;
+  content: 🌃;
 }

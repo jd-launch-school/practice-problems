@@ -1,4 +1,8 @@
 window.onload = function () {
+  init();
+};
+
+function init () {
   const raw = document.querySelector('#question');
   
   function refresh() {
@@ -6,16 +10,15 @@ window.onload = function () {
     location.reload();
   }
 
-  document.getElementById("reset").addEventListener("click", refresh, false);
-  
-  document.querySelectorAll(".random").forEach(button => {
-    button.addEventListener("click", pickQuestion, false);
-  });
-  
-  document.getElementById("first").addEventListener("change", readFile, false);
+  document.querySelector("#reset").addEventListener("click", refresh, false);
+  document.querySelector(".random").addEventListener("click", pickQuestion, false);
+  document.querySelector("#first").addEventListener("change", readFile, false);
+  document.querySelector("#previous").addEventListener("click", previous, false);
+  document.querySelector("#next").addEventListener("click", next, false); 
 
   let numberInput = document.querySelector('input[type=number]');
   numberInput.addEventListener ("keydown", onEnter);
+
   
   function onEnter (e) {
     if (e.key === 'Enter') {
@@ -24,9 +27,6 @@ window.onload = function () {
     }
   }
 
-  document.getElementById("previous").addEventListener("click", previous, false);
-  document.getElementById("next").addEventListener("click", next, false); 
-  
   function previous () {
     const session = sessionStorage.getItem('html');
     const questions = session.match(/<h1 id=".*">(.*)<\/h1>/g);
@@ -101,65 +101,16 @@ window.onload = function () {
     hljs.initLineNumbersOnLoad();
     numberInput.value = num;
 
-    const currentTheme = document.querySelector('body').style.backgroundColor;
-    if (currentTheme === 'black') {
-      toggleTheme('dark');
-    } else {
-      toggleTheme('light');
-    }
+    document.getElementById("theme").addEventListener("click", toggleTheme, false);
   }
+}
 
-  document.getElementById("theme").addEventListener("click", toggleTheme, false);
-  
-  function toggleTheme (theme) {
-    const anchor = document.querySelector('a');
-    const body = document.querySelector('body');
-    const button = document.querySelector('#theme');
-    const code = document.querySelectorAll('code');
-    const header = document.querySelector('header nav');
-    const detectedTheme = body.style.backgroundColor;
-    const elements = [anchor, body, button, code, header];
-    
-    if (theme === 'dark') {
-      darkMode(...elements);
-    } else if (theme === 'light') {
-      lightMode(...elements);
-    } else {
-      if (detectedTheme === 'black') {
-        lightMode(...elements);
-      } else {
-        darkMode(...elements);
-      }
-    }
-  }
+function toggleTheme () {
+  const body = document.body;
 
-  function darkMode(anchor, body, button, code, header) {
-    anchor.style.color = 'lightblue';
-    body.style.backgroundColor = 'black';
-    body.style.color = 'white';
-    button.textContent = '🌃';
-    button.style.backgroundColor = '#222222';
-    header.style.backgroundColor = 'black';
-
-    code.forEach(elem => {
-      if (!elem.result) {
-        elem.style.backgroundColor = 'darkgrey';
-      }
-    });
-  }
-
-  function lightMode(anchor, body, button, code, header) {
-    anchor.style.color = 'blue';
-    body.style.backgroundColor = 'white';
-    body.style.color = 'black';
-    button.textContent = '🏙️';
-    button.style.backgroundColor = 'white';
-    header.style.backgroundColor = 'white';
-
-    code.forEach(elem => {
-      if (!elem.result) {
-        elem.style.backgroundColor = 'lightgrey';
-      }
-    });
+  if (body.hasAttribute('class', 'dark-mode')) {
+    body.removeAttribute('class', 'dark-mode');
+  } else {
+    body.setAttribute('class', 'dark-mode');
   }
 }
