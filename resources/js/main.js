@@ -107,10 +107,13 @@ function init () {
 
 function toggleTheme () {
   const body = document.body;
+  const button = document.querySelector('#theme');
 
   if (body.hasAttribute('class', 'dark-mode')) {
     body.removeAttribute('class', 'dark-mode');
+    button.textContent = '🏙️';
   } else {
+    button.textContent = '🌃';
     body.setAttribute('class', 'dark-mode');
   }
 }
