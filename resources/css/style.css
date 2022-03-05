@@ -22,7 +22,7 @@ header {
 header nav {
   background-color: #ffffff;
   display: grid;
-  grid-template-areas: "previous input next" "random reset theme";
+  grid-template-areas: "previous input next" "random random reset";
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 10px;
   justify-content: center;
@@ -52,9 +52,7 @@ input[type="number"] {
 }
 
 .reset {
-  grid-area: reset;
   font-size: 20px;
-  padding: 5px 10px;
 }
 
 .random {
@@ -85,14 +83,18 @@ code {
 }
 
 .theme {
-  background-color: transparent;
-  border: none;
   font-size: 40px;
-  grid-area: theme;
 }
 /* Remove Arrows for Number Input (Firefox) */
 input[type=number] {
   -moz-appearance: textfield;
+}
+
+.sub-buttons {
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: 2fr 1fr;
+  grid-template-rows: subgrid;
 }
 
 /* Remove Arrows for Number Input (Other) */
@@ -152,6 +154,5 @@ input::-webkit-inner-spin-button {
 }
 
 .dark-mode #theme {
-  /* background-color: #222222; */
   content: 🌃;
 }
