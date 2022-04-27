@@ -18,6 +18,8 @@ function init () {
 
   let numberInput = document.querySelector('input[type=number]');
   numberInput.addEventListener ("keydown", onEnter);
+  
+  document.getElementById("theme").addEventListener("click", toggleTheme, false);
 
   
   function onEnter (e) {
@@ -72,7 +74,10 @@ function init () {
       sessionStorage.setItem('html', html);
       raw.innerHTML = '<p>Click <strong>"Random Question"</strong> to continue</p>';
     }, false);
-      document.querySelector('p#file-picker').classList.add('hidden');
+
+      document.querySelector('.file-picker').classList.add('hidden');
+  
+      document.querySelector('nav').style.gridTemplateAreas = '"previous input next" "random random reset"';
   
     if (file) {
       reader.readAsText(file);
@@ -100,20 +105,5 @@ function init () {
     hljs.highlightAll();
     hljs.initLineNumbersOnLoad();
     numberInput.value = num;
-
-    document.getElementById("theme").addEventListener("click", toggleTheme, false);
-  }
-}
-
-function toggleTheme () {
-  const body = document.body;
-  const button = document.querySelector('#theme');
-
-  if (body.hasAttribute('class', 'dark-mode')) {
-    body.removeAttribute('class', 'dark-mode');
-    button.textContent = '🏙️';
-  } else {
-    button.textContent = '🌃';
-    body.setAttribute('class', 'dark-mode');
   }
 }
