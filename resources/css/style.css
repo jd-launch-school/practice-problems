@@ -1,6 +1,6 @@
 body {
-  background-color: white;
-  color: black;
+  background-color: black;
+  color: white;
   font-size: 16px;
   margin: 0;
 }
@@ -20,9 +20,12 @@ header {
 }
 
 header nav {
-  background-color: #ffffff;
+  background-color: black;
   display: grid;
-  grid-template-areas: "previous input next" "random random reset";
+  grid-template-areas:
+  "file-picker file-picker file-picker"
+  "previous input next"
+  "random random reset";
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 10px;
   justify-content: center;
@@ -31,19 +34,45 @@ header nav {
   max-width: 100%;
 }
 
+a {
+  color: lightblue;
+}
+
+button {
+  background-color: darkgray;
+}
+
 main {
   width: 100%;
   max-width: 800px;
   margin: auto;
 }
 
+input[type="file"] {
+  background-color: darkgray;
+  font-size: 20px;
+  grid-area: file-picker;
+}
+
 input[type="number"] {
+  background-color: darkgray;
   font-size: 20px;
   grid-area: input;
   justify-self: center;
   text-align: center;
   width: 90%;
   padding: 5px 5px;
+}
+
+code {
+  background-color: darkgray;
+  border-radius: 5px;
+  padding: 0 3px;
+  color: black;
+}
+
+pre code {
+  background-color: #282c34;
 }
 
 .hidden {
@@ -75,26 +104,9 @@ input[type="number"] {
   padding: 20px;
 }
 
-code {
-  background-color: lightgray;
-  border-radius: 5px;
-  padding: 0 3px;
-  color: black;
-}
-
-.theme {
-  font-size: 40px;
-}
 /* Remove Arrows for Number Input (Firefox) */
 input[type=number] {
   -moz-appearance: textfield;
-}
-
-.sub-buttons {
-  display: grid;
-  grid-gap: 10px;
-  grid-template-columns: 2fr 1fr;
-  grid-template-rows: subgrid;
 }
 
 /* Remove Arrows for Number Input (Other) */
@@ -129,30 +141,4 @@ input::-webkit-inner-spin-button {
 
 .hljs-ln-line .hljs-ln-n {
   padding-right: 10px;
-}
-
-/* Dark Mode */
-.dark-mode {
-  background-color: black;
-  color: white;
-}
-
-.dark-mode header nav {
-  background-color: black;
-}
-
-.dark-mode a {
-  color: lightblue;
-}
-
-.dark-mode code {
-  background-color: darkgrey;
-}
-
-.dark-mode pre code {
-  background-color: #282c34;
-}
-
-.dark-mode #theme {
-  content: 🌃;
 }
